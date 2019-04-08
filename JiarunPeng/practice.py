@@ -8,7 +8,6 @@ def category_mapper():
     reader = csv.reader(sys.stdin)
     data = list()
     for line in reader:
-        n = 0
         if len(line) != 12:
             continue
         if line[0] == 'video_id':
@@ -18,7 +17,6 @@ def category_mapper():
         category = line[3].strip()
         vnc = video_id + country
         data.append((category, vnc))
-        n = n + 1
 
     v_types = set()
     
@@ -39,7 +37,7 @@ def category_mapper():
             result = 0.0
         else:
             result = round((float(division_1) / float(division_2)), 2)
-        print("{}\t:{}".format(v_type, result))
+        print("{}: {}".format(v_type, result))
 
 
 if __name__ == "__main__":
