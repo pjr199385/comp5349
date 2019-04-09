@@ -5,15 +5,14 @@ import sys
 
 def read_map_output(file):
     for line in file:
-        yield line.strip.split("\t", 1)
+        yield line.strip().split("\t", 1)
 
 
 def category_reducer():
-    data = read_map_output(sys.stdin)
     country_count = set()
     video_count = set()
     current_category = ""
-    for category, vnc in data:
+    for category, vnc in read_map_output(sys.stdin):
         video_id = vnc[0:-2]
         if current_category != category:
             if current_category !="":
