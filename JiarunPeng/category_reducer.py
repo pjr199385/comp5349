@@ -5,7 +5,7 @@ import sys
 
 def read_map_output(file):
     for line in file:
-        yield line.strip.split("\t", 1)
+        yield line.strip().split("\t", 1)
 
 
 def category_reducer():
@@ -29,8 +29,8 @@ def category_reducer():
         country_count.add(vnc)
         video_count.add(video_id)
     if current_category != "":
-    division_1 = len(country_count)
-    division_2 = len(video_count)
+        division_1 = len(country_count)
+        division_2 = len(video_count)
     if division_2 == 0:
         result = 0.0
     else:
