@@ -22,7 +22,7 @@ def category_reducer():
                     result = 0.0
                 else:
                     result = round((float(division_1) / float(division_2)), 2)
-                print("{}:{}".format(category, result))
+                print("{}:{}".format(current_category, result))
             current_category = category
             country_count = set()
             video_count = set()
@@ -36,5 +36,7 @@ def category_reducer():
     else:
         result = round((float(division_1) / float(division_2)), 2)
     print("{}:{}".format(current_category, result))
+
+    
 if __name__ == "__main__":
     category_reducer()

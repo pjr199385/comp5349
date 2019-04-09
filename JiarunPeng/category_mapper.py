@@ -4,7 +4,6 @@ import csv
 
 
 def category_mapper():
-    file = open("test.txt", "w")
     reader = csv.reader(sys.stdin)
     for line in reader:
         if len(line) != 12 :
@@ -16,7 +15,6 @@ def category_mapper():
         category = line[3].strip()
         vnc = video_id + country
         print("{}\t{}".format(category, vnc))
-        file.write("{}\t{}\n".format(category, vnc))
         
         
 if __name__ == "__main__":
